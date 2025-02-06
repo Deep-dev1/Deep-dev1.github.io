@@ -3,4 +3,3 @@ jobs:
     steps:
       - name: deepakkumar.kuzanthaivelu@straive.com
         run: echo "Hello, world!"
-

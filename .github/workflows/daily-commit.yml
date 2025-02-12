@@ -12,9 +12,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Setup Git Config
       run: |
         git config --global user.name 'github-actions[bot]'
@@ -25,13 +23,13 @@ jobs:
         echo "Daily commit $(date)" >> daily_commit.txt
         git add daily_commit.txt
         git commit -m "Automated daily commit"
-        
+
     - name: Push changes
       env:
         GH_PAT: ${{ secrets.GH_PAT }}
       run: |
-        git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
-        
+        git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:main
+
     - name: Notify Deepak Kumar Kuzanthaivelu
       run: |
         echo "Commit made by Deepak Kumar Kuzanthaivelu"

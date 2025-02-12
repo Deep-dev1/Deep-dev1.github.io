@@ -27,5 +27,5 @@ jobs:
         git commit -m "Daily commit $(date)"
         git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
 
-    - name: Notify Deepak Kumar Kuzanthaivelu <deepakkumar.kuzanthaivelu@straive.com>
+    - name: Notify - deepakkumar.kuzanthaivelu@straive.com
       run: echo "Commit made by Deepak Kumar Kuzanthaivelu"
